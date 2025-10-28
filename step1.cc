@@ -1,41 +1,9 @@
-/* ------------------------------------------------------------------------
- *
- * SPDX-License-Identifier: LGPL-2.1-or-later
- * Copyright (C) 1999 - 2024 by the deal.II authors
- *
- * This file is part of the deal.II library.
- *
- * Part of the source code is dual licensed under Apache-2.0 WITH
- * LLVM-exception OR LGPL-2.1-or-later. Detailed license information
- * governing the source code and code contributions can be found in
- * LICENSE.md and CONTRIBUTING.md at the top level directory of deal.II.
- *
- * ------------------------------------------------------------------------
- */
 
-
-// The first few includes are just like in the previous program, so do not
-// require additional comments:
 #include <deal.II/grid/tria.h>
 #include <deal.II/grid/grid_generator.h>
 #include <deal.II/grid/grid_out.h>
-
-// However, the next file is new. We need this include file for the
-// association of degrees of freedom ("DoF"s) to vertices, lines, and cells:
 #include <deal.II/dofs/dof_handler.h>
-
-// The following include contains the description of the bilinear finite
-// element, including the facts that it has one degree of freedom on each
-// vertex of the triangulation, but none on faces and none in the interior of
-// the cells.
-//
-// (In fact, the file contains the description of Lagrange elements in
-// general, i.e. also the quadratic, cubic, etc versions, and not only for 2d
-// but also 1d and 3d.)
 #include <deal.II/fe/fe_q.h>
-// In the following file, several tools for manipulating degrees of freedom
-// can be found, and the one after it is necessary to call one of the
-// functions imported from `dof_tools.h`:
 #include <deal.II/dofs/dof_tools.h>
 #include <deal.II/fe/mapping_q1.h>
 
